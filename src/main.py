@@ -21,7 +21,7 @@ print('---------------------')
 print(repo_url)
 print('---------------------')
     
-excluded_dirs = {'.git', '.github'}
+excluded_dirs = {'.git', '.github', 'scraper'}
         
 for dirpath, dirnames, filenames in os.walk(repo_path):
     dirnames[:] = [d for d in dirnames if d not in excluded_dirs]
