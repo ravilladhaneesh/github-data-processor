@@ -1,5 +1,5 @@
 import os
-
+import datetime
 
 
 
@@ -10,8 +10,8 @@ print('----------------------')
 repo_name = os.environ.get('REPO_NAME')
 repo_path = os.environ.get('REPO_PATH')
 repo_url = os.environ.get('REPO_URL')
-
-
+repo_branch = os.environ.get('BRANCH')
+now = datetime.datetime.now()
 
 #local
 '''
@@ -29,7 +29,8 @@ print(repo_path)
 print('---------------------')
 print(repo_url)
 print('---------------------')
-
+print(repo_branch)
+print('---------------------')
 
 
 
