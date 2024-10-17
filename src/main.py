@@ -34,7 +34,7 @@ print('---------------------')
 
 
 
-excluded_dirs = {'.git', '.github', 'scraper'}
+excluded_dirs = {'.git', '.github', 'github-scraper'}
 USERNAME, REPO = repo_name.split('/')
 
 #file_extensions = ['py', 'css', 'html', 'txt', 'java']
