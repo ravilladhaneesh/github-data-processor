@@ -10,7 +10,7 @@ print('----------------------')
 
 repo_name = os.environ.get('REPO_NAME')
 repo_path = os.environ.get('REPO_PATH')
-repo_branch = os.environ.get('REPO_BRANCH')
+branch = os.environ.get('BRANCH')
 repo_url = os.environ.get('REPO_URL')
 repo_visibility = os.environ.get('REPO_VISIBILITY')
 now = datetime.datetime.now()
@@ -31,7 +31,7 @@ print(f'repo path: {repo_path}')
 print('---------------------')
 print(f'repo url: {repo_url}')
 print('---------------------')
-print(f'branch: {repo_branch}')
+print(f'branch: {branch}')
 print('---------------------')
 print(f'visibility: {repo_visibility}')
 print('---------------------')
@@ -89,4 +89,4 @@ def process_repo(name, branch, url, path):
     languages_percentage = get_languages_percentage(languages_data)
 
 
-process_repo(repo_name, repo_branch, repo_url, repo_path)
+process_repo(repo_name, branch, repo_url, repo_path)
