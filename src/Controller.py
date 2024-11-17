@@ -33,6 +33,7 @@ def putData(name, branch, url, languages, is_private, now):
         # aws_access_key = response['Credentials']['AccessKeyId']
         # aws_secret_key = response['Credentials']['SecretAccessKey']
         # aws_session_token = response['Credentials']['SessionToken']
+        print(aws_access_key)
         
         
 
