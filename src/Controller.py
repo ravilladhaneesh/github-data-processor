@@ -49,7 +49,9 @@ def putData(name, branch, url, languages, is_private, now):
         print("Exit session block")
 
         # print(session)
+        print("Enter sigv4 auth block")
         sigv4_auth = AWSSigV4(service="execute-api", region=aws_region, session=session)
+        print("Exit sigv4 auth block")
         url = "https://ey3c00hvnd.execute-api.ap-south-1.amazonaws.com/test/putData"
         response = requests.post(url, json=body, auth=sigv4_auth)
         if response.status_code == 200:
