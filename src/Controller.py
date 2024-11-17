@@ -18,9 +18,11 @@ def putData(name, branch, url, languages, is_private, now):
 
     
     try:
+        print("Entered aws credentials os block")
         aws_access_key = os.environ.get("AWS_ACCESS_KEY_ID")
         aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
         aws_session_token = os.environ.get("AWS_SESSION_TOKEN")
+        print("Exit aws credentials os block")
         aws_region = "ap-south-1"
         # For local 
         # client = boto3.client("sts")
@@ -36,12 +38,14 @@ def putData(name, branch, url, languages, is_private, now):
         print(aws_access_key)
         
         
-
+        print("Entered session block")
         session = boto3.Session(
             aws_access_key_id=aws_access_key,
             aws_secret_access_key=aws_secret_key,
             aws_session_token=aws_session_token
         )
+        print("Exit session block")
+
         # print(session)
         sigv4_auth = AWSSigV4(service="execute-api", region=aws_region, session=session)
         url = "https://ey3c00hvnd.execute-api.ap-south-1.amazonaws.com/test/putData"
