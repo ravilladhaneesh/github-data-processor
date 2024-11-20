@@ -48,7 +48,7 @@ def putData(name, branch, url, languages, is_private, now):
         )
         print("Exit session block")
 
-        # print(session)
+        print(session)
         print("Enter sigv4 auth block")
         sigv4_auth = AWSSigV4(service="execute-api", region=aws_region, session=session)
         print("Exit sigv4 auth block")
@@ -57,6 +57,9 @@ def putData(name, branch, url, languages, is_private, now):
         if response.status_code == 200:
             print(f"Successfully Put data with username: {username}, reponame: {reponame}")
             return True
+        else:
+            print("AWS Internal Error")
+            return False
     except Exception as exc:
         print(f"Exception: {exc}")
         return False
