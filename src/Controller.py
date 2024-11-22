@@ -55,6 +55,9 @@ def putData(name, branch, url, languages, is_private, now):
             print(f"Successfully Put data with username: {username}, reponame: {reponame}")
             return True
         else:
+            print(response.status_code)
+            print("\n\n")
+            print("response body:", response.content)
             print("AWS Internal Error")
             return False
     except Exception as exc:
