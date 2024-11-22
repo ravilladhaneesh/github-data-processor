@@ -135,19 +135,25 @@ def putData(name, branch, url, languages, is_private, now):
         http_method = "POST"
         role_arn = os.environ.get("ROLE_ARN")
 
+        print("Step 1: Start")
         # Step 1: Get temporary AWS credentials
         credentials = get_aws_credentials(role_arn)
-    
+        print("Step 1: End")
+
+        print("Step 2: Start")
+
         # Step 2: Convert credentials for SigV4 signing
         aws_credentials = boto3.Session(
             aws_access_key_id=credentials['AccessKeyId'],
             aws_secret_access_key=credentials['SecretAccessKey'],
             aws_session_token=credentials['SessionToken']
         ).get_credentials()
-    
+        print("Step 2: End")
+
+        print("Step 3: Start")
         # Step 3: Call the API Gateway
         response = invoke_api(url, http_method, body, aws_credentials)
-
+        print("Step 3: End")
 
         if response.status_code == 200:
             print(f"Successfully Put data with username: {username}, reponame: {reponame}")
