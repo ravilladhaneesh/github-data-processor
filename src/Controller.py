@@ -5,7 +5,7 @@ import boto3
 from botocore.auth import SigV4Auth
 from botocore.awsrequest import AWSRequest
 from botocore.credentials import AssumeRoleWithWebIdentityCredentialFetcher, CredentialResolver, create_credential_resolver
-
+import json
 
 
 def get_aws_credentials(role_arn: str):
@@ -33,7 +33,7 @@ def sign_request(url, method, payload, region, service, aws_credentials):
     request = AWSRequest(
         method=method.upper(),
         url=url,
-        data=payload,
+        data=json.dumps(payload),
         headers=headers
     )
 
