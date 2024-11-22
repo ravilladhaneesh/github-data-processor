@@ -35,7 +35,11 @@ def putData(name, branch, url, languages, is_private, now):
         # aws_access_key = response['Credentials']['AccessKeyId']
         # aws_secret_key = response['Credentials']['SecretAccessKey']
         # aws_session_token = response['Credentials']['SessionToken']
-        
+        print("access key",aws_access_key == None)
+        print("\n\n")
+        print("secret_key",aws_secret_key == None)
+        print("\n\n")
+        print("session_key",aws_session_token == None)
         
         print("Entered session block")
         session = boto3.Session(
