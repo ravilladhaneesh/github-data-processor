@@ -17,11 +17,11 @@ now = datetime.datetime.now()
 
 #local
 '''
-repo_name = 'ravilladhaneesh/github-viewer'
+repo_name = 'ravilladhaneesh/workflow-test'
 repo_path = os.getcwd()
 branch = 'dummy'
 repo_url = 'https://github.com/ravilladhaneesh/github-viewer'
-is_private_repo = True
+is_private_repo = False
 '''
 
 
