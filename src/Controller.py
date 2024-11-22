@@ -35,9 +35,6 @@ def putData(name, branch, url, languages, is_private, now):
         # aws_access_key = response['Credentials']['AccessKeyId']
         # aws_secret_key = response['Credentials']['SecretAccessKey']
         # aws_session_token = response['Credentials']['SessionToken']
-        print("-----------")
-        print(aws_access_key)
-        print("-----------")
         
         
         print("Entered session block")
@@ -52,7 +49,7 @@ def putData(name, branch, url, languages, is_private, now):
         print("Enter sigv4 auth block")
         sigv4_auth = AWSSigV4(service="execute-api", region=aws_region, session=session)
         print("Exit sigv4 auth block")
-        url = "https://ey3c00hvnd.execute-api.ap-south-1.amazonaws.com/test/putData"
+        url = "https://5iwo7o78b2.execute-api.ap-south-1.amazonaws.com/test/putData"
         response = requests.post(url, json=body, auth=sigv4_auth)
         if response.status_code == 200:
             print(f"Successfully Put data with username: {username}, reponame: {reponame}")
