@@ -32,7 +32,7 @@ def sign_request(url, method, payload, region, service, aws_credentials):
     request = AWSRequest(
         method=method.upper(),
         url=url,
-        data=payload,
+        data=json.dumps(payload),
         headers=headers
     )
 
