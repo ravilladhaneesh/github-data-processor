@@ -13,6 +13,7 @@ repo_path = os.environ.get('REPO_PATH')
 branch = os.environ.get('BRANCH')
 repo_url = os.environ.get('REPO_URL')
 is_private_repo = os.environ.get('REPO_VISIBILITY')
+is_private_repo = True if is_private_repo == 'true' else False
 now = datetime.datetime.now()
 
 #local
