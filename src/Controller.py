@@ -89,7 +89,7 @@ def putData(name, branch, url, languages, is_private, now):
     #print(languages)
     try:
 
-        url = "https://5iwo7o78b2.execute-api.ap-south-1.amazonaws.com/test/putData"
+        url = "https://z6p48awdd7.execute-api.ap-south-1.amazonaws.com/dev/putData"
 
 
         http_method = "POST"
