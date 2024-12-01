@@ -2,7 +2,7 @@ import os
 import datetime
 import github_api as git_api
 import process_repo
-import Controller
+import aws_api_gateway as api_gw
 
 print('----------------------')
 print('TEST GITHUB ACTIONS')
@@ -56,7 +56,7 @@ def get_repo_data(name, branch, url, path, is_private_repo):
     map_language_names = process_repo.get_languages(languages_percentage)
     print(map_language_names)
 
-    Controller.putData(name, branch, url, map_language_names, is_private_repo, now)
+    api_gw.putData(name, branch, url, map_language_names, is_private_repo, now)
 
 
 
