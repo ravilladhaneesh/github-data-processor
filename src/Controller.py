@@ -89,8 +89,7 @@ def putData(name, branch, url, languages, is_private, now):
     #print(languages)
     try:
 
-        url = "https://5iwo7o78b2.execute-api.ap-south-1.amazonaws.com/test/putData"
-
+        url = "https://7xter4ua3h.execute-api.ap-south-1.amazonaws.com/test/putData"
 
         http_method = "POST"
         role_arn = os.environ.get("ROLE_ARN")
