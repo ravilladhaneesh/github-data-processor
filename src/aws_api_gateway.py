@@ -91,7 +91,7 @@ def putData(name, branch, url, languages, is_private, now):
 
         url = "https://7xter4ua3h.execute-api.ap-south-1.amazonaws.com/test/putData"
 
-        http_method = "POST"
+        http_method = "PUT"
         role_arn = os.environ.get("ROLE_ARN")
         #role_arn = "arn:aws:iam::011528266310:role/GitHubAction-AssumeRoleWithAction."
 
