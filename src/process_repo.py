@@ -20,7 +20,7 @@ Function to find all the different files in the directory
 """
 def get_files_of_non_default_branch(repo_name, repo_path):
      
-    excluded_dirs = { 'github-scraper', '__pycache__'}
+    excluded_dirs = { 'github-data-processor', '__pycache__'}
     #local testing
     #excluded_dirs = = {'.git', '.github', 'github-scraper', '.venv', '__pycache__'}
     USERNAME, REPO = repo_name.split('/')
