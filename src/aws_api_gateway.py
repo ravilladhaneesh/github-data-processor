@@ -93,7 +93,7 @@ def putData(name, branch, url, languages, is_private, now):
 
         http_method = "PUT"
         role_arn = os.environ.get("ROLE_ARN")
-        #role_arn = "arn:aws:iam::011528266310:role/GitHubAction-AssumeRoleWithAction."
+        #role_arn = "arn:aws:iam::011528266310:role/github-put-data-role"
 
         # Step 1: Get temporary AWS credentials
         credentials = get_aws_credentials(role_arn)
