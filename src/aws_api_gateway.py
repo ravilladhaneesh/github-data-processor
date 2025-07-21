@@ -66,7 +66,8 @@ def invoke_api(url, method, payload, aws_credentials):
         headers=dict(signed_request.headers),
         data=signed_request.body
     )
-
+    
+    # print(response.json())
     return response
 
 
@@ -89,7 +90,7 @@ def putData(name, branch, url, languages, is_private, now):
     #print(languages)
     try:
 
-        url = "https://7xter4ua3h.execute-api.ap-south-1.amazonaws.com/test/putData"
+        url = "https://09p14088yf.execute-api.ap-south-1.amazonaws.com/test/putData"
 
         http_method = "PUT"
         role_arn = os.environ.get("ROLE_ARN")
@@ -106,15 +107,18 @@ def putData(name, branch, url, languages, is_private, now):
         ).get_credentials()
        
         # Step 3: Call the API Gateway
-        response = invoke_api(url, http_method, json.dumps(body), aws_credentials)
+        aws_response = invoke_api(url, http_method, json.dumps(body), aws_credentials)
 
-        if response.status_code == 200:
+        response = aws_response.json()
+        
+        if response.get("statusCode", 500) == 200:
             print(f"Successfully Put data with username: {username}, reponame: {reponame}")
             return True
         else:
-            print(response.status_code)
+            print(response.get("statusCode", 500))
             print("\n\n")
-            print("response body:", response.content)
+            print("response body:", response.get("message", "Something wrong.Check the code"))
+            print("\n\n")
             print("AWS Internal Error")
             return False
     except Exception as exc:
