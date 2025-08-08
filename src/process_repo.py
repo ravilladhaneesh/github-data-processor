@@ -9,6 +9,7 @@ file_extensions = {
     'html': 'HTML',
     'css': 'CSS',
     'tf': 'HCL',
+    'tfvars': 'HCL',
     'txt': 'text',
     'json': 'JSON',
     'md': 'markdown'
@@ -57,7 +58,6 @@ def get_languages_percentage(languages):
     cal_percentage = lambda x: (x / percentage_sum ) * 100
     percentage_sum = sum(languages.values())
     languages_percentage = {lang: round(cal_percentage(languages[lang]), 2) for lang in languages}
-    #print(languages_percentage)
     return languages_percentage
 
 
@@ -70,8 +70,10 @@ Ex: .py as python, .tf as HCL
 def get_languages(languages):
     lang = {}
     for key, value in languages.items():
-        if key in file_extensions.keys():
-            lang[file_extensions[key]] = value
+        if key in file_extensions.keys() and file_extensions[key] in lang:
+                lang[file_extensions[key]] += value
+        elif key in file_extensions.keys():
+                lang[file_extensions[key]] = value
         else:
             lang[key] = value
     
