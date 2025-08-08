@@ -8,22 +8,22 @@ print('----------------------')
 print('TEST GITHUB ACTIONS')
 print('----------------------')
 
-# repo_name = os.environ.get('REPO_NAME') 
-# repo_path = os.environ.get('REPO_PATH')
-# branch = os.environ.get('BRANCH')
-# repo_url = os.environ.get('REPO_URL')
-# is_private_repo = os.environ.get('REPO_VISIBILITY')
-# is_private_repo = True if is_private_repo == 'true' else False
+repo_name = os.environ.get('REPO_NAME')
+repo_path = os.environ.get('REPO_PATH')
+branch = os.environ.get('BRANCH')
+repo_url = os.environ.get('REPO_URL')
+is_private_repo = os.environ.get('REPO_VISIBILITY')
+is_private_repo = True if is_private_repo == 'true' else False
 now = datetime.datetime.now()
 
 #local
-
+'''
 repo_name = 'ravilladhaneesh/workflow-test'
 repo_path = os.getcwd()
 branch = 'dummy'
 repo_url = 'https://github.com/ravilladhaneesh/github-viewer'
 is_private_repo = False
-
+'''
 
 
 print(f"repo name: {repo_name}")
