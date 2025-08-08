@@ -47,7 +47,7 @@ def get_repo_data(name, branch, url, path, is_private_repo):
 
     default_branches = {'master', 'main'}
     
-    if branch in default_branches:
+    if branch in default_branches and not is_private_repo:
         languages_data = git_api.get_languages(name)
     else:
         languages_data = process_repo.get_files_of_non_default_branch(name, path)
